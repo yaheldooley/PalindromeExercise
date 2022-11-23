@@ -7,7 +7,8 @@ namespace PalindromeExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WordSmith smith = new WordSmith();
+            smith.IsAPalindrome("bottle");
         }
     }
 
@@ -16,10 +17,9 @@ namespace PalindromeExercise
         public bool IsAPalindrome(string s)
         {
             if (s == null || s.Length < 1) return false;
-            var reversed = s.ToCharArray();
-            reversed.Reverse();
-            string answer = new string(reversed);
-            return String.Equals(s, answer);
+            var reversed = s.ToCharArray().Reverse();
+            string answer = string.Join("", reversed);
+			return String.Equals(s, answer);
         }
     }
 }
